@@ -10,5 +10,10 @@ public class SoccerCoach implements Coach{
         return "Practice your knuckleball shot";
     }
 
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
+
 
 }
