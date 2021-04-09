@@ -1,13 +1,15 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach{
 
-    // field injection with java reflection
-    @Autowired
+
+    @Autowired                           // field injection with java reflection
+    @Qualifier("randomFortuneService")   // Let spring know the bean id - in case for autowiring multiple implementations
     private FortuneService fortuneService;
 
     // default constructor
