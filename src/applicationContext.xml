@@ -10,7 +10,8 @@
     <!-- add an entry to enable component scanning-->
     <context:component-scan base-package="com.luv2code.springdemo"></context:component-scan>
 
-
+    <!-- pass the values of the properties file-->
+    <context:property-placeholder location="classpath:sport.properties"/>
 </beans>
 
 
