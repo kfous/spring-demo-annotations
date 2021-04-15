@@ -8,15 +8,22 @@ import org.springframework.stereotype.Component;
 
 public class SwimCoach implements Coach {
 
+    // Field level injection
+    @Value("${foo.email}")
+    private String email;
 
-   private FortuneService fortuneService;
+    @Value("${foo.team}")
+    private String team;
+
+
+    private FortuneService fortuneService;
 
 
     // default constructor
-    public SwimCoach(FortuneService thefortuneService){
+    public SwimCoach(FortuneService thefortuneService) {
         fortuneService = thefortuneService;
 
-       // System.out.println(">> SwimCoach: inside default constructor");
+        // System.out.println(">> SwimCoach: inside default constructor");
     }
 
 
@@ -30,4 +37,11 @@ public class SwimCoach implements Coach {
         return fortuneService.getFortune();
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTeam() {
+        return team;
+    }
 }
