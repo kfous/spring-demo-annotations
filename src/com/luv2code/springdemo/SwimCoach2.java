@@ -5,20 +5,33 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+//Example class to retrieve values from .properties file
+@Component
+public class SwimCoach2 implements Coach {
 
-public class SwimCoach implements Coach {
+    @Autowired
+    @Qualifier("randomFortuneService")
+    FortuneService fortuneService;
 
+    @Value("${foo.email}")
+    private String email;
 
-   private FortuneService fortuneService;
-
+    @Value("${foo.team}")
+    private String team;
 
     // default constructor
-    public SwimCoach(FortuneService thefortuneService){
-        fortuneService = thefortuneService;
-
-       // System.out.println(">> SwimCoach: inside default constructor");
+    public SwimCoach2(){
+        System.out.println(">> SwimCoach: inside default constructor");
     }
 
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTeam() {
+        return team;
+    }
 
     @Override
     public String getDailyWorkout() {

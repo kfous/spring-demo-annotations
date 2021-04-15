@@ -11,7 +11,7 @@ public class PracticeHelloSpringApp {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // get the bean from spring container
-        SwimCoach theCoach = context.getBean("swimCoach", SwimCoach.class);
+        SwimCoach2 theCoach = context.getBean("swimCoach2", SwimCoach2.class);
 
         // SoccerPlayer example
         // Coach theCoach2 = context.getBean("soccerCoach",Coach.class);
